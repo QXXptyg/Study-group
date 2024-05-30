@@ -1,0 +1,1133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com)
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot name="ruff">
+
+<!-- adding imu sensor to the base link -->
+<!--IMU : joint , link , sensor  -->
+
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-0.016734 -0.0030605 0.082439"
+        rpy="0 0 0" />
+      <mass
+        value="13.5" />
+      <inertia
+        ixx="0.10593"
+        ixy="-0.00014617"
+        ixz="0.00011878"
+        iyy="0.084379"
+        iyz="8.0858E-05"
+        izz="0.15349" />
+      </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/oem/PycharmProjects/Ruff_ppo-main/MESHES/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.7 0.7 0.7 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/oem/PycharmProjects/Ruff_ppo-main/MESHES/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+     <link
+    name="FR1">
+    <inertial>
+      <origin
+        xyz="-0.0048686 -0.0013235 -0.058047"
+        rpy="0 0 0" />
+      <mass
+        value="1.35" />
+      <inertia
+        ixx="0.0034963"
+        ixy="0.00023833"
+        ixz="0.00010627"
+        iyy="0.0026844"
+        iyz="2.8887E-05"
+        izz="0.002311" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/oem/PycharmProjects/Ruff_ppo-main/MESHES/RF_hip_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.77647 0.75686 0.73725 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/oem/PycharmProjects/Ruff_ppo-main/MESHES/RF_hip_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="FR1_"
+    type="revolute">
+    <origin
+      xyz="0.191 -0.05525 0.058"
+      rpy="1.5708 0 -1.5708" />
+    <parent
+      link="base_link" />
+    <child
+      link="FR1" />
+    <axis
+      xyz="-0.0044332 -0.0012051 0.99999" />
+    <limit
+      lower="-0.85"
+      upper="0"
+      effort="200"
+      velocity="22" />
+  </joint>
+  <link
+    name="FR2">
+    <inertial>
+      <origin
+        xyz="-0.00040619 0.0031783 -0.011606"
+        rpy="0 0 0" />
+      <mass
+        value="2.59" />
+      <inertia
+        ixx="0.0055532"
+        ixy="4.7634E-05"
+        ixz="-7.409E-07"
+        iyy="0.0044743"
+        iyz="2.3244E-07"
+        izz="0.0071861" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/oem/PycharmProjects/Ruff_ppo-main/MESHES/RF_thigh_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.89804 0.91765 0.92941 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/oem/PycharmProjects/Ruff_ppo-main/MESHES/RF_thigh_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="FR2_"
+    type="revolute">
+    <origin
+      xyz="0.018335 0.0049841 -0.063"
+      rpy="1.5708 0.30152 -1.3054" />
+    <parent
+      link="FR1" />
+    <child
+      link="FR2" />
+    <axis
+      xyz="-0.0035521 0.0032162 -0.99999" />
+    <limit
+      lower="-1.39"
+      upper="0.3"
+      effort="60"
+      velocity="22" />
+  </joint>
+  <link
+    name="FR3">
+    <inertial>
+      <origin
+        xyz="0.093849 0.01956 0.00022458"
+        rpy="0 0 0" />
+      <mass
+        value="0.20073" />
+      <inertia
+        ixx="8.4584E-05"
+        ixy="-0.00027252"
+        ixz="-6.8405E-09"
+        iyy="0.0012409"
+        iyz="-1.4264E-09"
+        izz="0.0013101" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/oem/PycharmProjects/Ruff_ppo-main/MESHES/RF_calf_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.59216 0.59216 0.59216 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/oem/PycharmProjects/Ruff_ppo-main/MESHES/RF_calf_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="FR3_"
+    type="revolute">
+    <origin
+      xyz="0 0.24425 -0.088575"
+      rpy="0 0 -1.5708" />
+    <parent
+      link="FR2" />
+    <child
+      link="FR3" />
+    <axis
+      xyz="0.0042342 0.0015858 -0.99999" />
+    <limit
+      lower="-2.1"
+      upper="0"
+      effort="90"
+      velocity="55" />
+  </joint>
+  <link
+    name="FL1">
+    <inertial>
+      <origin
+        xyz="0.0048829 -0.0012697 -0.058047"
+        rpy="0 0 0" />
+      <mass
+        value="1.35" />
+      <inertia
+        ixx="0.0035015"
+        ixy="-0.00022932"
+        ixz="-0.00010658"
+        iyy="0.0026792"
+        iyz="2.7714E-05"
+        izz="0.002311" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/oem/PycharmProjects/Ruff_ppo-main/MESHES/LF_hip_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.77647 0.75686 0.73725 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/oem/PycharmProjects/Ruff_ppo-main/MESHES/LF_hip_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="FL1_"
+    type="revolute">
+    <origin
+      xyz="0.191 0.05475 0.058"
+      rpy="1.5708 0 -1.5708" />
+    <parent
+      link="base_link" />
+    <child
+      link="FL1" />
+    <axis
+      xyz="0.0044463 -0.0011562 0.99999" />
+    <limit
+      lower="0"
+      upper="-0.85"
+      effort="60"
+      velocity="22" />
+  </joint>
+
+  <link
+    name="FL2">
+    <inertial>
+      <origin
+        xyz="-0.0007196 0.0058167 0.042196"
+        rpy="0 0 0" />
+      <mass
+        value="2.59" />
+      <inertia
+        ixx="0.0035871"
+        ixy="4.4631E-05"
+        ixz="5.5473E-07"
+        iyy="0.002512"
+        iyz="-9.1647E-07"
+        izz="0.0044284" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/oem/PycharmProjects/Ruff_ppo-main/MESHES/LF_thigh_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.80392 0.76471 0.054902 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/oem/PycharmProjects/Ruff_ppo-main/MESHES/LF_thigh_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="FL2_"
+    type="revolute">
+    <origin
+      xyz="-0.018388 0.0047816 -0.063"
+      rpy="1.5708 0.29525 -1.8252" />
+    <parent
+      link="FL1" />
+    <child
+      link="FL2" />
+    <axis
+      xyz="-0.0035438 0.0032254 0.99999" />
+    <limit
+      lower="-1.39"
+      upper="0.3"
+      effort="60"
+      velocity="22" />
+  </joint>
+  <!----------------------------------------------------------------------------lF calf-------------------------------------------->
+  <link
+    name="FL3">
+    <inertial>
+      <origin
+        xyz="0.09385 0.019559 0.00022464"
+        rpy="0 0 0" />
+      <mass
+        value="0.20073" />
+      <inertia
+        ixx="8.4583E-05"
+        ixy="-0.00027252"
+        ixz="-6.8477E-09"
+        iyy="0.0012409"
+        iyz="-1.4316E-09"
+        izz="0.0013101" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/oem/PycharmProjects/Ruff_ppo-main/MESHES/LF_calf_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.89804 0.91765 0.92941 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/oem/PycharmProjects/Ruff_ppo-main/MESHES/LF_calf_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="FL3_"
+    type="revolute">
+    <origin
+      xyz="0 0.24425 0.087825"
+      rpy="0 0 -1.5708" />
+    <parent
+      link="FL2" />
+    <child
+      link="FL3" />
+    <axis
+      xyz="0.017799 -0.024381 -0.99954" />
+    <limit
+      lower="-2.1"
+      upper="0"
+      effort="90"
+      velocity="55" />
+  </joint>
+  <link
+    name="RR1">
+    <inertial>
+      <origin
+        xyz="-0.0048686 -0.0013235 0.058047"
+        rpy="0 0 0" />
+      <mass
+        value="1.35" />
+      <inertia
+        ixx="0.0034963"
+        ixy="0.00023833"
+        ixz="-0.00010627"
+        iyy="0.0026844"
+        iyz="-2.8888E-05"
+        izz="0.002311" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/oem/PycharmProjects/Ruff_ppo-main/MESHES/RH_hip_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.77647 0.75686 0.73725 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/oem/PycharmProjects/Ruff_ppo-main/MESHES/RH_hip_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RR1_"
+    type="revolute">
+    <origin
+      xyz="-0.191 -0.05475 0.058"
+      rpy="1.5708 0 -1.5708" />
+    <parent
+      link="base_link" />
+    <child
+      link="RR1" />
+    <axis
+      xyz="-0.0044332 -0.0012051 0.99999" />
+    <limit
+      lower="-0.85"
+      upper="0"
+      effort="200"
+      velocity="10" />
+  </joint>
+  <!---------------------------------------------------------RH_t--------------------------------------------------->
+  <link
+    name="RR2">
+    <inertial>
+      <origin
+        xyz="-0.00037755 0.0032184 -0.011602"
+        rpy="0 0 0" />
+      <mass
+        value="2.59" />
+      <inertia
+        ixx="0.0055486"
+        ixy="4.4355E-05"
+        ixz="-1.7807E-07"
+        iyy="0.0044789"
+        iyz="5.0648E-07"
+        izz="0.0071861" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/oem/PycharmProjects/Ruff_ppo-main/MESHES/RH_thigh_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.77647 0.75686 0.73725 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/oem/PycharmProjects/Ruff_ppo-main/MESHES/RH_thigh_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint
+    name="RR2_"
+    type="revolute">
+    <origin
+      xyz="0.018335 0.0049841 0.063"
+      rpy="1.5708 0.30152 -1.3054" />
+    <parent
+      link="RR1" />
+    <child
+      link="RR2" />
+    <axis
+      xyz="0.0035521 -0.0032162 0.99999" />
+    <limit
+      lower="-1.39"
+      upper="0.3"
+      effort="200000"
+      velocity="10" />
+  </joint>
+  <!-------------------------------------------------------------RH_c------------------------------->
+  <link
+    name="RR3">
+    <inertial>
+      <origin
+        xyz="0.093849 0.01956 0.00022467"
+        rpy="0 0 0" />
+      <mass
+        value="0.20073" />
+      <inertia
+        ixx="8.4584E-05"
+        ixy="-0.00027252"
+        ixz="-6.8405E-09"
+        iyy="0.0012409"
+        iyz="-1.4264E-09"
+        izz="0.0013101" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/oem/PycharmProjects/Ruff_ppo-main/MESHES/RH_calf_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0 0.91765 0.92941 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/oem/PycharmProjects/Ruff_ppo-main/MESHES/RH_calf_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RR3_"
+    type="revolute">
+    <origin
+      xyz="0 0.24425 -0.088575"
+      rpy="0 0 -1.5708" />
+    <parent
+      link="RR2" />
+    <child
+      link="RR3" />
+    <axis
+      xyz="0.0042342 0.0015858 -0.99999" />
+    <limit
+      lower="-2.1"
+      upper="0"
+      effort="2000"
+      velocity="100" />
+  </joint>
+    <link
+    name="RL1">
+    <inertial>
+      <origin
+        xyz="0.0048829 -0.0012697 0.058047"
+        rpy="0 0 0" />
+      <mass
+        value="1.35" />
+      <inertia
+        ixx="0.0035015"
+        ixy="-0.00022932"
+        ixz="0.00010658"
+        iyy="0.0026792"
+        iyz="-2.7713E-05"
+        izz="0.002311" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/oem/PycharmProjects/Ruff_ppo-main/MESHES/LH_hip_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.77647 0.75686 0.73725 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/oem/PycharmProjects/Ruff_ppo-main/MESHES/LH_hip_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RL1_"
+    type="revolute">
+    <origin
+      xyz="-0.191 0.05525 0.058"
+      rpy="1.5708 0 -1.5708" />
+    <parent
+      link="base_link" />
+    <child
+      link="RL1" />
+    <axis
+      xyz="0.0044463 -0.0011562 0.99999" />
+    <limit
+      lower="0"
+      upper="0.85"
+      effort="60"
+      velocity="22" />
+  </joint>
+  <!----------------------------LH_thigh------------------------------------------------------------------->
+  <link
+    name="RL2">
+    <inertial>
+      <origin
+        xyz="-0.00029793 0.0027227 0.011158"
+        rpy="0 0 0" />
+      <mass
+        value="2.59" />
+      <inertia
+        ixx="0.0053567"
+        ixy="3.4302E-05"
+        ixz="1.7371E-07"
+        iyy="0.004472"
+        iyz="-6.5693E-07"
+        izz="0.0069875" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/oem/PycharmProjects/Ruff_ppo-main/MESHES/LH_thigh_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.89804 0.91765 0.92941 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/oem/PycharmProjects/Ruff_ppo-main/MESHES/LH_thigh_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RL2_"
+    type="revolute">
+    <origin
+      xyz="-0.018388 0.0047816 0.063"
+      rpy="1.5708 0.29525 -1.8252" />
+    <parent
+      link="RL1" />
+    <child
+      link="RL2" />
+    <axis
+      xyz="0.0035438 -0.0032254 -0.99999" />
+    <limit
+      lower="-0.3"
+      upper="1.39"
+      effort="60"
+      velocity="22" />
+  </joint>
+  <!----------------------------LH calf------------------------------------------------->
+  <link
+    name="RL3">
+    <inertial>
+      <origin
+        xyz="0.09548 -0.0085944 0.00022458"
+        rpy="0 0 0" />
+      <mass
+        value="0.20073" />
+      <inertia
+        ixx="3.0758E-05"
+        ixy="9.5544E-05"
+        ixz="-6.9596E-09"
+        iyy="0.0012948"
+        iyz="6.2581E-10"
+        izz="0.0013101" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/oem/PycharmProjects/Ruff_ppo-main/MESHES/LH_calf_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.89804 0.91765 0.92941 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/oem/PycharmProjects/Ruff_ppo-main/MESHES/LH_calf_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RL3_"
+    type="revolute">
+    <origin
+      xyz="0 0.24425 0.08695"
+      rpy="0 0 -1.2755" />
+    <parent
+      link="RL2" />
+    <child
+      link="RL3" />
+    <axis
+      xyz="0.009934 -0.028505 -0.99954" />
+    <limit
+      lower="-2.1"
+      upper="0"
+      effort="90"
+      velocity="55" />
+  </joint>
+  <!--------feet----------------------------------------------------------------------------->
+  <link
+    name="FOOT1">
+    <inertial>
+      <origin
+        yz="-0.0033159 0.00046631 0.0017153"
+        rpy="0 0 0"  />
+      <mass
+        value="0.1484" />
+      <inertia
+        ixx="2.2702E-05"
+        ixy="7.1747E-07"
+        ixz="-2.7591E-06"
+        iyy="1.8175E-05"
+        iyz="-2.183E-07"
+        izz="1.8958E-05"/>
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/oem/PycharmProjects/Ruff_ppo-main/MESHES/LF_FOOT_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+         rgba="0.77647 0.75686 0.73725 1"  />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/oem/PycharmProjects/Ruff_ppo-main/MESHES/LF_FOOT_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="FOOT1_"
+    type="fixed">
+    <origin
+      xyz="0.23 0.07123 0.000525"
+      rpy="1.3164 0 0.29525" />
+    <parent
+      link="FL3" />
+    <child
+      link="FOOT1" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="FOOT2">
+    <inertial>
+      <origin
+        xyz="-0.0033159 0.00046631 0.0017153"
+        rpy="0 0 0" />
+      <mass
+        value="0.1484" />
+      <inertia
+        ixx="2.2738E-05"
+        ixy="-7.4169E-07"
+        ixz="-2.7285E-06"
+        iyy="1.8177E-05"
+        iyz="2.1786E-07"
+        izz="1.892E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/oem/PycharmProjects/Ruff_ppo-main/URDF/RF_FOOT_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+         rgba="0.77647 0.75686 0.73725 1"  />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/oem/PycharmProjects/Ruff_ppo-main/URDF/RF_FOOT_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="FOOT2_"
+    type="fixed">
+    <origin
+      xyz="0.23 0.07123 0.000525"
+      rpy="1.8362 0 0.30152"  />
+    <parent
+      link="FR3" />
+    <child
+      link="FOOT2" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="FOOT3">
+    <inertial>
+      <origin
+        xyz="-0.0033159 0.00046631 0.0017153"
+        rpy="0 0 0" />
+      <mass
+        value="0.1484" />
+      <inertia
+        ixx="2.2738E-05"
+        ixy="-7.4169E-07"
+        ixz="-2.7285E-06"
+        iyy="1.8177E-05"
+        iyz="2.1786E-07"
+        izz="1.892E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/oem/PycharmProjects/Ruff_ppo-main/MESHES/RH_FOOT_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.77647 0.75686 0.73725 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/oem/PycharmProjects/Ruff_ppo-main/MESHES/RH_FOOT_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  
+  <joint
+    name="FOOT3_"
+    type="fixed">
+    <origin
+      xyz="0.23 0.07123 -7.5E-05"
+      rpy="1.8362 0 0.30152" />
+    <parent
+      link="RR3" />
+    <child
+      link="FOOT3" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="FOOT4">
+    <inertial>
+      <origin
+        xyz="-0.0033047 -0.00045256 0.0017405"
+        rpy="0 0 0" />
+      <mass
+        value="0.1484" />
+      <inertia
+        ixx="2.2702E-05"
+        ixy="7.1747E-07"
+        ixz="-2.7591E-06"
+        iyy="1.8175E-05"
+        iyz="-2.183E-07"
+        izz="1.8958E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/oem/PycharmProjects/Ruff_ppo-main/MESHES/LH_FOOT_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.77647 0.75686 0.73725 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/oem/PycharmProjects/Ruff_ppo-main/MESHES/LH_FOOT_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="FOOT4_"
+    type="fixed">
+    <origin
+      xyz="0.24078 0.0012216 0.000525"
+      rpy="1.3164 0 0" />
+    <parent
+      link="RL3" />
+    <child
+      link="FOOT4" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <!--------------------IMU------LD------------------------------->
+  <link
+    name="IMU_Link">
+    <inertial>
+      <origin
+        xyz="0 -1.73472347597681E-18 0.00786440123693569"
+        rpy="0 0 0" />
+      <mass
+        value="0.015098248808675" />
+      <inertia
+        ixx="1.40711528619458E-06"
+        ixy="-9.43502886193298E-22"
+        ixz="-4.0148228845489E-22"
+        iyy="1.7139595418244E-06"
+        iyz="-1.29181417364221E-23"
+        izz="2.38808480244662E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/oem/PycharmProjects/Ruff_ppo-main/MESHES/IMU_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.270588235294118 0.662745098039216 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/oem/PycharmProjects/Ruff_ppo-main/MESHES/IMU_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <!------------------------------IMU   with  body    fixed                (0,0,0)---------------------------------->
+  <joint
+    name="IMU_JOINT"
+    type="fixed">
+    <origin
+      xyz="0 0 0.0065"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="IMU_Link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="ld_Link">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/oem/PycharmProjects/Ruff_ppo-main/MESHES/ld_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/oem/PycharmProjects/Ruff_ppo-main/MESHES/ld_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <!----------------------------------------------------ld   with body   fixed--------------------------------------->
+  <joint
+    name="ld_joint"
+    type="fixed">
+    <origin
+      xyz="0.14 0 0.131"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="ld_Link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+
+<transmission name="RL1_trans">
+<type>transmission_interface/SimpleTransmission</type>
+<actuator name="RL1_motor">
+  <mechanicalReduction>1</mechanicalReduction>
+</actuator>
+<joint name="RL1_">
+  <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+</joint>
+</transmission>
+<transmission name="RL2_trans">
+<type>transmission_interface/SimpleTransmission</type>
+<actuator name="RL2_motor">
+  <mechanicalReduction>1</mechanicalReduction>
+</actuator>
+<joint name="RL2_">
+  <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+</joint>
+</transmission>
+<transmission name="RL3_trans">
+<type>transmission_interface/SimpleTransmission</type>
+<actuator name="RL3_motor">
+  <mechanicalReduction>1</mechanicalReduction>
+</actuator>
+<joint name="RL3_">
+  <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+</joint>
+</transmission>
+
+<transmission name="RR1_trans">
+<type>transmission_interface/SimpleTransmission</type>
+<actuator name="RR1_motor">
+  <mechanicalReduction>1</mechanicalReduction>
+</actuator>
+<joint name="RR1_">
+  <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+</joint>
+</transmission>
+
+<transmission name="RR2_trans">
+<type>transmission_interface/SimpleTransmission</type>
+<actuator name="RR2_motor">
+  <mechanicalReduction>1</mechanicalReduction>
+</actuator>
+<joint name="RR2_">
+  <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+</joint>
+</transmission>
+<transmission name="RR3_trans">
+<type>transmission_interface/SimpleTransmission</type>
+<actuator name="RR3_motor">
+  <mechanicalReduction>1</mechanicalReduction>
+</actuator>
+<joint name="RR3_">
+  <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+</joint>
+</transmission>
+</robot>
